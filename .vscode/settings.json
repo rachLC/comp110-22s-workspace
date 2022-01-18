@@ -22,4 +22,9 @@
     "python.testing.pytestArgs": [],
     "python.envFile": "${workspaceFolder}/.env",
     "python.analysis.typeCheckingMode": "basic",
+    "git.ignoredRepositories": [
+        "backupp",
+        "backup2",
+        "upstream2"
+    ],
 }
