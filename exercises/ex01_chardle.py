@@ -33,5 +33,7 @@ if char_input == word_input[4]:
     number_char = number_char + 1
 if number_char == 0:
     print("No instances of " + char_input + " found in " + word_input)
-else: 
+if number_char == 1:
+    print("1 instance of " + char_input + " found in " + word_input)
+if number_char > 1: 
     print(str(int(number_char)) + " instances of " + char_input + " found in " + word_input)
