@@ -1,6 +1,6 @@
 """EX02 - One-Shot Wordle- Loops!"""
 __author__ = "730394362"
-secret_word = str("pieces")
+secret_word = str("python")
 l: int = len(secret_word)
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
@@ -21,17 +21,16 @@ while index < len(secret_word):
     else:
         any_matches = False 
         alt_indices: int = 0
-        #creating a variable to track the other indices we are checking after confirming that the same indices between guess_input and secret_word do not match, this is so we can see if certain characters in guess_input exist at any indices in secret_word at all.
-        while any_matches not True and index < len(secret_word):
+        # creating a variable to track the other indices we are checking after confirming that the same indices between guess_input and secret_word do not match, this is so we can see if certain characters in guess_input exist at any indices in secret_word at all.
+        while alt_indices < len(secret_word):
             if secret_word[alt_indices] == guess_input[index]:
                 any_matches = True
-                #if character at the alternate index in guess_input are found at the current index in secret_word, then any_matches becomes true
-            else:
-                alt_indices += 1
-                #if the character in a specific index does not match the character in the current index of the secret_word, then the alt_indices is increased by one so the process can be repeated at another index until all indices have been checked for matches and the loop ends.
-        if any_matches = True:
-            result_guess +=  YELLOW_BOX
-            #if character at alternate indices of the guess_input are found in the indices of the secret_word, but not the same indices, then a yellow box emoji is added to result str to relay this to the player
+                # if character at the alternate index in guess_input are found at the current index in secret_word, then any_matches becomes true
+            alt_indices += 1
+            # if the character in a specific index does not match the character in the current index of the secret_word, then the alt_indices is increased by one so the process can be repeated at another index until all indices have been checked for matches and the loop ends.
+        if any_matches is True:
+            result_guess += YELLOW_BOX
+            # if character at alternate indices of the guess_input are found in the indices of the secret_word, but not the same indices, then a yellow box emoji is added to result str to relay this to the player
         else:
             result_guess += WHITE_BOX
         # when none of the characters at any of the indices of the guess_input are found at any of the indices of the secret_word, a str representing the white box emoji is added to the result_guess empty str
