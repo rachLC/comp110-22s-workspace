@@ -16,7 +16,7 @@ def contains_char(searched_through: str, searched_for: str) -> bool:
             return True
         else:
             index += 1
-            # raises the index so the loop can continue until the whole word has been searched through.
+            # raises the index so the loop can continue until the whole word has been searched through for matching characters.
     return False
 
 
@@ -54,15 +54,19 @@ def main() -> None:
     while turns <= 6 and won is False:
         print(f"=== Turn {turns}/6 ===")
         guess: str = input_guess(len(secret_word))
+        # assigning a variable to the input_guess function so that it can keep prompting the player, store the player's input into that function, and then compare it to the secret word.
         if guess != secret_word:
             print(emojified(guess, secret_word))
             turns += 1
+            # if the guessed word does not equal the secret word, it prints the codified boxes to help give the player hints, and also increases the turns so that loop can continue and the player can keep guessing.
         elif guess == secret_word:
             print(emojified(guess, secret_word))
             print(f"You won in {turns}/6 turns!")
             won = True
+            # if the player's guess matches the secret word, it prints the codified response using the emojified function and informs the player of their win in how many turns it took them.
     if turns > 6:
         print("X/6 - Sorry, try again tomorrow!")
+        # once the player exceeds six turns, they are kicked out of the game
 
 
 if __name__ == "__main__":
