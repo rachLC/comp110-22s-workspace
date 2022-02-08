@@ -30,7 +30,7 @@ def emojified(guess_word: str, secret_word: str) -> str:
             result_guess += GREEN_BOX
         elif contains_char(secret_word, guess_word[index]) is True:
             result_guess += YELLOW_BOX
-            # calling the contains_char function checks the function for character matches and returns a bool value, which we then use to create conditions for emojified function to spit out strings of boxes that codfies the guessed word and informs the player about the placement of characters in their guess
+            # calling the contains_char function checks the function for character matches with the secret word and returns a bool value, which we then use to create conditions for emojified function to spit out strings of boxes that codfies the guessed word and informs the player about the placement of characters in their guess
         else:
             result_guess += WHITE_BOX
         index += 1
@@ -54,21 +54,17 @@ def main() -> None:
         print(f"=== Turn {turns}/6 ===")
         secret_word: str = "codes"
         exp_length: int = len(secret_word)
-        emojified(input_guess(exp_length), secret_word)
-        if input_guess == secret_word:
-            won: bool = True
-            emojified(input_guess(exp_length), secret_word)
-            print(f"You won in {turns}/6 turns!")
-            print(result_guess)
-        else:
-            emojified(input_guess(exp_length), secret_word)
-            print(result_guess)
+        if input_guess != secret_word:
+            print(emojified(input_guess(exp_length), secret_word))
             turns += 1
+            won: bool = False
+        elif input_guess == secret_word:
+            print(emojified(input_guess(exp_length), secret_word))
+            print(f"You won in {turns}/6 turns!")
+            won: bool = True
+    if turns > 6:
         print("X/6 - Sorry , try again tomorrow!")
 
 
 if __name__ == "__main__":
     main()
-
-
-        
