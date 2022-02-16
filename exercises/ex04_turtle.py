@@ -2,7 +2,7 @@
 
 __author__ = "730394362"
 
-from turtle import Turtle, colormode, done
+from turtle import Turtle, done
 
 
 def main() -> None:
