@@ -27,7 +27,7 @@ def main() -> None:
     # Assigning a color to the first ghost.
     raphael.color("pink")
     raphael.begin_fill()
-    # Calling function that will creates the ghost shape.
+    # Calling function that will create the ghost shape.
     draw_ghost(raphael, 0.0, 0.0)
     raphael.end_fill()
     raphael.goto(0.0, -100.0)
