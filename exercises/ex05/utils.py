@@ -17,10 +17,8 @@ def sub(a_list: list, start: int, end: int) -> list[int]:
     """Create a subset list of a given list."""
     sub_list: list[int] = list()
     i = start
-    real_end = end - 1
-    while i <= real_end:
+    for i in a_list:
         sub_list += a_list[i]
-        i += 1
     return sub_list
 
 
