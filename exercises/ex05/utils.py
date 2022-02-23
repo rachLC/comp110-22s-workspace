@@ -10,25 +10,25 @@ def only_evens(min: int, max: int) -> list[int]:
     while i <= max:
         xs.append(i)
         i += 2 
-        return xs
-
-
+    return xs
 
 
 def sub(a_list: list, start: int, end: int) -> list[int]:
     """Create a subset list of a given list."""
-    a_list: list[int] = list()
-
-
-
+    sub_list: list[int] = list()
+    
+    return a_list
 
 
 def concat(first_list: list, second_list: list) -> list[int]:
     """Concatenate two given lists into one."""
-    full_list: str = ""
-    first: str = first_list
-    second: str = second_list
-    full_list += first  
-    full_list += second
+    full_list: list[int] = list()
+    i: int = 0
+    while i < len(first_list):
+        full_list += first_list[i]
+        i += 1
+    n: int = 0
+    while n < len(second_list):
+        full_list += second_list[n]
+        n += 1
     return full_list
-
