@@ -16,8 +16,12 @@ def only_evens(min: int, max: int) -> list[int]:
 def sub(a_list: list, start: int, end: int) -> list[int]:
     """Create a subset list of a given list."""
     sub_list: list[int] = list()
-    
-    return a_list
+    i = start
+    real_end = end - 1
+    while i <= real_end:
+        sub_list += a_list[i]
+        i += 1
+    return sub_list
 
 
 def concat(first_list: list, second_list: list) -> list[int]:
