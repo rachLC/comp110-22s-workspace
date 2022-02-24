@@ -3,34 +3,37 @@
 __author__: str = "730394362"
 
 
-def only_evens(min: int, max: int) -> list[int]:
+def only_evens(give_list: list[int]) -> list[int]:
     """Create a list of even numbers from a given range."""
     xs: list[int] = list()
-    i: int = (min // 2) * 2
-    while i <= max:
-        xs.append(i)
-        i += 2 
+    for i in give_list:
+        if i % 2 == 0:
+            xs.append(i)
     return xs
 
 
 def sub(a_list: list, start: int, end: int) -> list[int]:
     """Create a subset list of a given list."""
     sub_list: list[int] = list()
-    i = start
-    for i in a_list:
-        sub_list += a_list[i]
+    if start < 0:
+        start = 0
+    if end > len(a_list):
+        end = len(a_list)
+    if len(a_list) == 0:
+        return []
+    if start > len(a_list):
+        return []
+    if end <= 0:
+        return []
+    while start < end:
+        sub_list.append(a_list[start])
+        start += 1
     return sub_list
 
 
 def concat(first_list: list, second_list: list) -> list[int]:
     """Concatenate two given lists into one."""
-    full_list: list[int] = list()
     i: int = 0
-    while i < len(first_list):
-        full_list += first_list[i]
-        i += 1
-    n: int = 0
-    while n < len(second_list):
-        full_list += second_list[n]
-        n += 1
-    return full_list
+    for i in second_list:
+        first_list.append(i)
+    return first_list
